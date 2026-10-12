@@ -1,0 +1,19 @@
+{%- extends "sphinx_rtd_theme/breadcrumbs.html" %}
+{#- Lecture notebooks are generated from labs/src/*.py. On those pages the bar links to the
+    source file for editing and adds buttons that open the notebook in Colab or Binder. -#}
+{%- block breadcrumbs_aside %}
+  {%- if page_source_suffix == ".ipynb" %}
+    {%- set repo = github_user ~ "/" ~ github_repo %}
+    {%- set notebook = "docs/" ~ pagename ~ ".ipynb" %}
+    {%- set source = "labs/src/" ~ (pagename.split("/") | last) ~ ".py" %}
+    <li class="wy-breadcrumbs-aside run-buttons">
+      <a class="run-btn colab" href="https://colab.research.google.com/github/{{ repo }}/blob/{{ github_version }}/{{ notebook }}">Open in Colab</a>
+      <a class="run-btn binder" href="https://mybinder.org/v2/gh/{{ repo }}/{{ github_version }}?labpath={{ notebook }}">Launch Binder</a>
+    </li>
+    <li class="wy-breadcrumbs-aside">
+      <a class="fa fa-github" href="https://github.com/{{ repo }}/blob/{{ github_version }}/{{ source }}"> Edit on GitHub</a>
+    </li>
+  {%- elif pagename not in ("genindex", "search") %}
+    {{ super() }}
+  {%- endif %}
+{%- endblock %}

@@ -1,0 +1,5 @@
+# Everything an author needs to execute the lectures and build the site.
+-r requirements-lab.txt
+-r requirements-docs.txt
+jupytext
+nbclient

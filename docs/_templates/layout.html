@@ -1,0 +1,11 @@
+{%- extends "!layout.html" %}
+{#- The theme joins the page and site titles with an em dash. Use a vertical bar, and show the
+    site title once on the landing page. -#}
+{%- block htmltitle %}
+  {%- set page_title = title | striptags %}
+  {%- if page_title == docstitle %}
+  <title>{{ docstitle | e }}</title>
+  {%- else %}
+  <title>{{ page_title | e }} | {{ docstitle | e }}</title>
+  {%- endif %}
+{%- endblock %}

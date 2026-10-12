@@ -1,0 +1,23 @@
+/* Additions to sphinx_rtd_theme for the tutorial format. */
+
+/* Colab and Binder buttons in the bar above each lecture notebook. */
+.wy-breadcrumbs-aside.run-buttons { margin-left: .6em; }
+.run-btn {
+  display: inline-block; margin-left: .35em; padding: 1px 10px;
+  border-radius: 4px; font-size: 88%; line-height: 1.8;
+  color: #fff !important; text-decoration: none;
+}
+.run-btn.colab  { background: #d9730d; }
+.run-btn.binder { background: #4a8fc4; }
+.run-btn:hover  { filter: brightness(1.08); }
+
+/* "Try it" and "Think about it" boxes, written with :class: exercise. */
+.admonition.exercise { border-left: 4px solid #2b6cb0; }
+.admonition.exercise > .admonition-title { background: #2b6cb0; }
+
+/* The theme stops table cells from wrapping, which hides long prose cells. */
+.wy-table-responsive table td, .wy-table-responsive table th { white-space: normal; }
+
+/* Tables printed by notebook cells stay compact and scroll on narrow screens. */
+div.cell_output { overflow-x: auto; }
+div.cell_output table { font-size: 90%; }
