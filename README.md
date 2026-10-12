@@ -41,3 +41,7 @@ sphinx-build -W -b html docs docs/_build/html
 
 The build re-times the CPU cells, so the measured numbers change on every run. The lecture quotes
 the range that several runs produced.
+
+## License
+
+The code and the lecture text are released under the [MIT License](LICENSE).
