@@ -1,5 +1,5 @@
 sphinx>=7
-sphinx_rtd_theme>=2
-myst-nb>=1.1
+sphinx_rtd_theme>=3,<4
+myst-nb>=1.1,<2
 sphinx-copybutton
 pyyaml  # the {quiz} directive parses its body as YAML
