@@ -3,6 +3,7 @@
 Build from the course root with:  sphinx-build -W -b html docs docs/_build/html
 """
 
+import os
 import sys
 from pathlib import Path
 
@@ -40,6 +41,8 @@ exclude_patterns = ["_build", "**.ipynb_checkpoints", ".DS_Store", "Thumbs.db"]
 
 html_theme = "sphinx_rtd_theme"
 html_title = project
+# Read the Docs sets this variable during a build, and local builds emit no canonical tag.
+html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "")
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 html_theme_options = {
